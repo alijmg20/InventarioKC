@@ -1,5 +1,6 @@
 <?php
 include_once '../Plantillas/cabecera.inc.php';
+$pagina = "aceites";
 ?>
 
 <div class="container">
@@ -12,7 +13,7 @@ include_once '../Plantillas/cabecera.inc.php';
             <div class="col-md-4">
                 <br>
                 <input type="submit" class="btn btn-primary" value="Buscar" name="btn_buscar">
-                <a href="#" class="btn btn-success">Insertar Producto</a>
+                <a href="nuevo.php" class="btn btn-success">Insertar Producto</a>
             </div>
         </div>
 
@@ -23,15 +24,23 @@ include_once '../Plantillas/cabecera.inc.php';
     <br>
     <table class=" table table-light table-sm">
         <thead>
-            <tr>
-                <th>Nombre</th>
+            <tr class="text-center">
                 <th>Codigo</th>
+                <th>Marca</th>
+                <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Precio</th>
-                <th>Fecha Ingresos</th>
+                <th>Precio Costo</th>
+                <th>Precio Venta</th>
+                <th>Fecha de ingreso</th>
                 <th colspan="2">Acciones</th>
             </tr>
         </thead>
+        
+        <tbody>
+            
+            <?php include_once '../Modelo/mostrar.inc.php'; ?>
+            
+        </tbody>
     </table>
     
 </div>
