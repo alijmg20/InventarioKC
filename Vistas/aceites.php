@@ -19,6 +19,23 @@ include_once '../Plantillas/cabecera.inc.php';
     </form>
 </div>
 
+<div class="container">
+    <br>
+    <table class=" table table-light table-sm">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Codigo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Fecha Ingresos</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+    </table>
+    
+</div>
+
 
 
 <?php
