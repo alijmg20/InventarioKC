@@ -1,15 +1,15 @@
 <?php
-
+$pagina = "aceites";
 include_once '../Modelo/mostrar.inc.php';
 
 include_once '../Modelo/buscar.inc.php';
 
 include_once '../Plantillas/cabecera.inc.php';
-$pagina = "aceites";
+
 ?>
 
 <div class="container">
-    <form method="POST" action="../Modelo/buscar.inc.php">
+    <form method="POST" action="">
         <div class="row">
             <div class="col-md-8">
                 <br>
@@ -59,8 +59,8 @@ $pagina = "aceites";
                 </td>
                 <td><?php echo $fila['fecha_ingreso'];   ?> </td>
                 <td>
-                    <a href="#" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>
-                    <a href="#" class="btn btn-danger"> <i class="fas fa-trash-alt"> </i> </a>
+                    <a href="actualizar.php?id=<?php echo $fila['id']; ?>" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>
+                    <a href="../Modelo/eliminar.inc.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> <i class="fas fa-trash-alt"> </i> </a>
                 </td>
             </tr>
         <?php endforeach ?>

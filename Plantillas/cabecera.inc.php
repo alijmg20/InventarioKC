@@ -12,7 +12,6 @@
 
     <body>
 
-            <?php include_once "../Modelo/precioDolar.inc.php"?>
 
 
         <nav class="navbar navbar-dark bg-dark">
