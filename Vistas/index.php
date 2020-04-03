@@ -16,7 +16,7 @@ include_once '../Plantillas/cabecera.inc.php';
         <div class="col-md-4">
             <a href="#" class="btn btn-primary fa-6x "> <i class="fas fa-filter"></i> Filtros </a>
         </div>
-        
+
         <!--Boton de Otros-->
         <div class="col-md-4">
             <a href="#" class="btn btn-danger fa-6x"> <i class="fas fa-archive"></i>Otros </a>
@@ -37,15 +37,21 @@ include_once '../Plantillas/cabecera.inc.php';
         <div class="col-md-4">
             <a href="#" class="btn btn-secondary fa-4x "> <i class="far fa-address-card"></i> Proveedores </a>
         </div>
-        
+
         <!--Actualizacion del valor del dolar-->
         <div class="col-md-4">
-            <a href="#" class="btn btn-success fa-4x"> <i class="fas fa-dollar-sign"></i>Actualizar Valor </a>
+            <a href="#" data-toggle="modal" data-target="#exampleModal" class="btn btn-success fa-4x"> <i class="fas fa-dollar-sign"></i>Actualizar Valor
+            </a>
+            <?php include_once "dolar.php" ?>
         </div>
 
 
 
     </div>
+
+
+
+</div>
 
 
 </div>

@@ -1,10 +1,15 @@
 <?php
+
+include_once '../Modelo/mostrar.inc.php';
+
+include_once '../Modelo/buscar.inc.php';
+
 include_once '../Plantillas/cabecera.inc.php';
 $pagina = "aceites";
 ?>
 
 <div class="container">
-    <form method="post">
+    <form method="POST" action="../Modelo/buscar.inc.php">
         <div class="row">
             <div class="col-md-8">
                 <br>
@@ -16,7 +21,6 @@ $pagina = "aceites";
                 <a href="nuevo.php" class="btn btn-success">Insertar Producto</a>
             </div>
         </div>
-
     </form>
 </div>
 
@@ -35,14 +39,34 @@ $pagina = "aceites";
                 <th colspan="2">Acciones</th>
             </tr>
         </thead>
-        
+
         <tbody>
-            
-            <?php include_once '../Modelo/mostrar.inc.php'; ?>
-            
+        <?php foreach ($resultado as $fila):
+            ?>
+            <tr class="text-center">
+
+                <td><?php echo $fila['codigo'];   ?> </td>
+                <td><?php echo $fila['marca'];   ?> </td>
+                <td><?php echo $fila['nombre'];   ?> </td>
+                <td><?php echo $fila['descripcion'];   ?> </td>
+                <td><?php echo $fila['precio'];   ?> </td>
+                <td>
+                    <?php
+                    $valor = $fila['precio'];
+                    $precioVenta = $valor + ($valor * 0.5); // cambiar por valor de precio en dolares ;
+                    echo $precioVenta;
+                    ?>
+                </td>
+                <td><?php echo $fila['fecha_ingreso'];   ?> </td>
+                <td>
+                    <a href="#" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>
+                    <a href="#" class="btn btn-danger"> <i class="fas fa-trash-alt"> </i> </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
         </tbody>
     </table>
-    
+
 </div>
 
 

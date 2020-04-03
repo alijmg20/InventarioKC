@@ -12,7 +12,9 @@
 
     <body>
 
-        <!--<nav class="navbar navbar-light" style="background-color: #ebe534;">-->
+            <?php include_once "../Modelo/precioDolar.inc.php"?>
+
+
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
                 <a href="index.php" class="navbar-brand">
@@ -20,7 +22,9 @@
                 </a>
             </div>
             <ul class="navbar navbar-nav navbar-right">
-                <li class="navbar-brand"><i class="fas fa-dollar-sign"></i> Precio:   </li>
+                <li class="navbar-brand"><i class="fas fa-dollar-sign"></i> Precio:
+                
+                </li>
             </ul>
         </nav>
         <br>

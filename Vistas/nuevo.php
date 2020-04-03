@@ -6,7 +6,7 @@ include_once '../Plantillas/cabecera.inc.php';
 
 ?>
 <div class="container">
-    <form method="post">
+    <form method="POST" action="../Modelo/crear.inc.php">
         <div class="row">
 
             <div class="col-md-6">
