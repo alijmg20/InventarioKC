@@ -12,7 +12,13 @@
 
     <body>
 
+<?php
 
+
+    include_once '../Modelo/dolar.inc.php';
+    
+    
+?>
 
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
@@ -21,7 +27,7 @@
                 </a>
             </div>
             <ul class="navbar navbar-nav navbar-right">
-                <li class="navbar-brand"><i class="fas fa-dollar-sign"></i> Precio:
+                <li class="navbar-brand"><i class="fas fa-dollar-sign"></i> Precio: <?php echo $precio_dolar['valor']?>
                 
                 </li>
             </ul>

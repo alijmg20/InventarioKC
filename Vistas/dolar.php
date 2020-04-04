@@ -1,4 +1,6 @@
 <?php
+include_once '../Modelo/dolar.inc.php';
+
 include_once '../Plantillas/cabecera.inc.php';
 ?>
 
@@ -16,7 +18,7 @@ include_once '../Plantillas/cabecera.inc.php';
                             </button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" class="text-center form-control" name="dolar" placeholder="Ingrese el precio del dolar">
+                            <input type="text" class="text-center form-control" name="valor" placeholder="Ingrese el precio del dolar">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

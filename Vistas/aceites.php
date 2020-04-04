@@ -1,10 +1,19 @@
 <?php
-$pagina = "aceites";
+
+include_once '../Plantillas/cabecera.inc.php';
+
+
+include_once '../Modelo/Pagina.inc.php';
+
+
+
 include_once '../Modelo/mostrar.inc.php';
 
 include_once '../Modelo/buscar.inc.php';
 
-include_once '../Plantillas/cabecera.inc.php';
+
+
+
 
 ?>
 
@@ -24,7 +33,7 @@ include_once '../Plantillas/cabecera.inc.php';
     </form>
 </div>
 
-<div class="container">
+<div class=" container-fluid">
     <br>
     <table class=" table table-light table-sm">
         <thead>
@@ -33,8 +42,10 @@ include_once '../Plantillas/cabecera.inc.php';
                 <th>Marca</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Precio Costo</th>
-                <th>Precio Venta</th>
+                <th>Cantidad</th>
+                <th>Precio Costo $</th>
+                <th>Precio Venta $</th>
+                <th>Precio Venta BsS</th>
                 <th>Fecha de ingreso</th>
                 <th colspan="2">Acciones</th>
             </tr>
@@ -49,14 +60,39 @@ include_once '../Plantillas/cabecera.inc.php';
                 <td><?php echo $fila['marca'];   ?> </td>
                 <td><?php echo $fila['nombre'];   ?> </td>
                 <td><?php echo $fila['descripcion'];   ?> </td>
+                <td><?php echo $fila['cantidad'];   ?> </td>
                 <td><?php echo $fila['precio'];   ?> </td>
+
+                
                 <td>
                     <?php
-                    $valor = $fila['precio'];
-                    $precioVenta = $valor + ($valor * 0.5); // cambiar por valor de precio en dolares ;
-                    echo $precioVenta;
+                        //Precio en dolares de venta
+                        $precioEnDolares;
+                        $cantidad = $fila['cantidad'];
+                        $costoEnDolares = $fila['precio'];
+                        if($cantidad==0){
+                            $precioEnDolares = 0;
+                            echo $precioEnDolares;    
+                        }else{
+                            $precioEnDolares = $costoEnDolares/$cantidad + 1.30;
+                            echo round($precioEnDolares,2);
+                        }
                     ?>
                 </td>
+
+                
+                <td>
+                    <?php
+                    //Precio de venta en Bolivares
+
+                    
+                    $precioDolar = $precio_dolar['valor'];
+                    $precioVentaBs =  $precioEnDolares * $precioDolar ; // cambiar por valor de precio en dolares ;
+                    echo round($precioVentaBs,2);
+                    ?>
+                </td>
+
+
                 <td><?php echo $fila['fecha_ingreso'];   ?> </td>
                 <td>
                     <a href="actualizar.php?id=<?php echo $fila['id']; ?>" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>

@@ -1,8 +1,10 @@
 <?php
 
+include_once '../Plantillas/cabecera.inc.php';
+
 include_once '../Modelo/editar.inc.php';
 
-include_once '../Plantillas/cabecera.inc.php';
+
 
 ?>
 <div class="container">
@@ -33,8 +35,12 @@ include_once '../Plantillas/cabecera.inc.php';
         <br>
         <div class="row">
 
+        <div class="col-md-6">
+                <input type="text" class=" form-control" name="cantidad" placeholder="Cantidad" value=<?php if($resultado) echo $resultado['cantidad']; ?>>
+            </div>
+
             <div class="col-md-6">
-                <input type="text" class=" form-control" name="precio" placeholder="Precio Costo" value=<?php if($resultado) echo $resultado['precio']; ?>>
+                <input type="text" class=" form-control" name="precio" placeholder="Precio Costo en $" value=<?php if($resultado) echo $resultado['precio']; ?>>
             </div>
 
         </div>
