@@ -4,11 +4,12 @@
 
     if(isset($_GET['id'])){
         $id = (int)$_GET['id'];
-        $eliminar = $conexion->prepare('DELETE FROM aceites WHERE id=:id');
+        $categoria = (string)$_GET['categoria'];
+        $eliminar = $conexion->prepare('DELETE FROM '."$categoria".' WHERE id=:id');
         $eliminar->execute(array(
             ':id'=>$id
         ));
-        header('Location: ../Vistas/aceites.php');
+        header("Location: ../Vistas/$categoria.php");
     }else{
-        header('Location: ../Vistas/aceites.php');
+        header('Location: ../Vistas/index.php');
     }

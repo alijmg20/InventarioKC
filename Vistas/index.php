@@ -1,10 +1,16 @@
 <?php
+
+
 include_once '../Plantillas/cabecera.inc.php';
 ?>
 <!--Contenedor principal donde van ubicadas los botones de enlace-->
 <div class="container ">
 
+
+
     <!-- Primera fila de elementos que contiene los elementos mas grandes-->
+
+
     <div class="row">
 
         <!--Boton de Aceites-->
@@ -47,14 +53,16 @@ include_once '../Plantillas/cabecera.inc.php';
 
 
 
+
+
     </div>
 
 
-
 </div>
 
 
-</div>
+
+
 
 
 

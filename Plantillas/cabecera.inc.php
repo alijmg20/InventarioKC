@@ -16,8 +16,7 @@
 
 
     include_once '../Modelo/dolar.inc.php';
-    
-    
+    $pagina ;
 ?>
 
         <nav class="navbar navbar-dark bg-dark">

@@ -4,14 +4,17 @@
 
 if(isset($_GET['id'])){
     $id = (int)$_GET['id'];
+    $categoria = (string)$_GET['categoria'];
 
-    $consulta = $conexion->prepare('SELECT * FROM aceites WHERE id=:id LIMIT 1');
+    $consulta = $conexion->prepare('SELECT * FROM '."$categoria".' WHERE id=:id LIMIT 1');
+
+
     $consulta -> execute(array(
         ':id'=>$id
     ));
     $resultado = $consulta ->fetch();
 }else{
-    header('Location: ../Vistas/aceites.php');
+    header("Location: ../Vistas/index.php");
 }
 
 if(isset($_POST['boton_guardar'])){
@@ -21,6 +24,7 @@ if(isset($_POST['boton_guardar'])){
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $cantidad = $_POST['cantidad'];
+    $categoria = $_POST['categoria'];
 
     if(!empty($codigo) && !empty($marca) && !empty($nombre) && !empty($descripcion) && !empty($precio) && !empty($cantidad)){
 
@@ -34,7 +38,7 @@ if(isset($_POST['boton_guardar'])){
                     ':precio'=>$precio,
                     ':id'=> $id
             ));
-            header('Location: ../Vistas/aceites.php');
+            header("Location: ../Vistas/$categoria.php");
     }else{
         echo "<script> alert('Los campos estan vacios'); </script>";
     }

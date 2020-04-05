@@ -6,10 +6,11 @@
 include_once '../Plantillas/cabecera.inc.php';
 
 
-   
+
 include_once '../Modelo/crear.inc.php';
 
 ?>
+
 
 <div class="container">
     <form method="POST" action="">
@@ -45,6 +46,21 @@ include_once '../Modelo/crear.inc.php';
 
             <div class="col-md-6">
                 <input type="text" class=" form-control" name="precio" placeholder="Precio Costo en $">
+            </div>
+
+        </div>
+
+        <br>
+        <div class="row">
+
+        <div class="col-md-6">
+
+                <select class="form-control" name="categoria">
+                    <option value="aceites">aceites</option>
+                    <option value="filtros">filtros</option>
+                    <option value="otros">otros</option>
+                </select>
+
             </div>
 
         </div>

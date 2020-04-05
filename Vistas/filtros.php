@@ -1,9 +1,19 @@
 <?php
 
+//MODIFICAR TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
+
+
+//CAMBIARLO TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
 
 include_once '../Plantillas/cabecera.inc.php';
 
-    $pagina = 'aceites';
+    $pagina = 'filtros';
     
 
 include_once '../Modelo/mostrar.inc.php';
