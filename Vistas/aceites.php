@@ -25,7 +25,7 @@ include_once '../Modelo/buscar.inc.php';
             <div class="col-md-4">
                 <br>
                 <input type="submit" class="btn btn-primary" value="Buscar" name="btn_buscar">
-                <a href="nuevo.php" class="btn btn-success">Insertar Producto</a>
+                <a href="nuevo.php?categoria=<?php echo $pagina ?>" class="btn btn-success">Insertar Producto</a>
             </div>
         </div>
     </form>
@@ -93,8 +93,8 @@ include_once '../Modelo/buscar.inc.php';
 
                 <td><?php echo $fila['fecha_ingreso'];   ?> </td>
                 <td>
-                    <a href="actualizar.php?id=<?php echo $fila['id']?>&categoria=<?php echo $fila['categoria']?>;" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>
-                    <a href="../Modelo/eliminar.inc.php?id=<?php echo $fila['id']?>&categoria=<?php echo $fila['categoria']; ?>" class="btn btn-danger"> <i class="fas fa-trash-alt"> </i> </a>
+                    <a href="actualizar.php?id=<?php echo $fila['id']?>&categoria=<?php echo $pagina  ?>" class="btn btn-secondary"> <i class="fas fa-marker"> </i> </a>
+                    <a href="../Modelo/eliminar.inc.php?id=<?php echo $fila['id']?>&categoria=<?php echo $pagina ?>" class="btn btn-danger"> <i class="fas fa-trash-alt"> </i> </a>
                 </td>
             </tr>
         <?php endforeach ?>

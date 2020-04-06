@@ -20,12 +20,12 @@ include_once '../Plantillas/cabecera.inc.php';
 
         <!--Boton de Filtros-->
         <div class="col-md-4">
-            <a href="#" class="btn btn-primary fa-6x "> <i class="fas fa-filter"></i> Filtros </a>
+            <a href="filtros.php" class="btn btn-primary fa-6x "> <i class="fas fa-filter"></i> Filtros </a>
         </div>
 
         <!--Boton de Otros-->
         <div class="col-md-4">
-            <a href="#" class="btn btn-danger fa-6x"> <i class="fas fa-archive"></i>Otros </a>
+            <a href="otros.php" class="btn btn-danger fa-6x"> <i class="fas fa-archive"></i>Otros </a>
         </div>
 
     </div>
@@ -41,7 +41,7 @@ include_once '../Plantillas/cabecera.inc.php';
 
         <!--Boton de Proveedores-->
         <div class="col-md-4">
-            <a href="#" class="btn btn-secondary fa-4x "> <i class="far fa-address-card"></i> Proveedores </a>
+            <a href="proveedores.php" class="btn btn-secondary fa-4x "> <i class="far fa-address-card"></i> Proveedores </a>
         </div>
 
         <!--Actualizacion del valor del dolar-->

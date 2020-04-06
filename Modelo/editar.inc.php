@@ -2,11 +2,13 @@
 
     include_once '../Controlador/conexion.inc.php';
 
+
+    //--------Buscar y ubicar el id del objeto a cambiar------------------//
+
 if(isset($_GET['id'])){
     $id = (int)$_GET['id'];
-    $categoria = (string)$_GET['categoria'];
 
-    $consulta = $conexion->prepare('SELECT * FROM '."$categoria".' WHERE id=:id LIMIT 1');
+    $consulta = $conexion->prepare('SELECT * FROM '."$pagina".' WHERE id=:id LIMIT 1');
 
 
     $consulta -> execute(array(
@@ -14,8 +16,10 @@ if(isset($_GET['id'])){
     ));
     $resultado = $consulta ->fetch();
 }else{
-    header("Location: ../Vistas/index.php");
+    header("Location: ../Vistas/$pagina.php");
 }
+
+
 
 if(isset($_POST['boton_guardar'])){
     $codigo = $_POST['codigo'];
@@ -24,11 +28,10 @@ if(isset($_POST['boton_guardar'])){
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $cantidad = $_POST['cantidad'];
-    $categoria = $_POST['categoria'];
 
     if(!empty($codigo) && !empty($marca) && !empty($nombre) && !empty($descripcion) && !empty($precio) && !empty($cantidad)){
 
-            $consulta = $conexion -> prepare('UPDATE aceites SET codigo=:codigo,marca=:marca,nombre=:nombre,descripcion=:descripcion,cantidad=:cantidad,precio=:precio WHERE id=:id');
+            $consulta = $conexion -> prepare('UPDATE '."$pagina".' SET codigo=:codigo,marca=:marca,nombre=:nombre,descripcion=:descripcion,cantidad=:cantidad,precio=:precio WHERE id=:id');
             $consulta->execute(array(
                     ':codigo'=>$codigo,
                     ':marca'=>$marca,
@@ -38,7 +41,37 @@ if(isset($_POST['boton_guardar'])){
                     ':precio'=>$precio,
                     ':id'=> $id
             ));
-            header("Location: ../Vistas/$categoria.php");
+            header("Location: ../Vistas/$pagina.php");
+    }else{
+        echo "<script> alert('Los campos estan vacios'); </script>";
+    }
+
+
+}
+
+//-----------------------BOTON GUARDAR PROOVEDOR----------------------//
+
+if(isset($_POST['boton_guardar_proveedor'])){
+
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $numero = $_POST['numero'];
+    $correo = $_POST['correo'];
+    $ubicacion = $_POST['ubicacion'];
+
+
+    if(!empty($nombre) && !empty($apellido) && !empty($numero) && !empty($correo) && !empty($ubicacion)){
+
+            $consulta = $conexion -> prepare('UPDATE '."$pagina".' SET nombre=:nombre,apellido=:apellido,numero=:numero,correo=:correo,ubicacion=:ubicacion WHERE id=:id');
+            $consulta->execute(array(
+                    ':nombre'=>$nombre,
+                    ':apellido'=>$apellido,
+                    ':numero'=>$numero,
+                    ':correo'=>$correo,
+                    ':ubicacion'=>$ubicacion,
+                    ':id'=> $id
+            ));
+            header("Location: ../Vistas/$pagina.php");
     }else{
         echo "<script> alert('Los campos estan vacios'); </script>";
     }

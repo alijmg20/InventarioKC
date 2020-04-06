@@ -3,7 +3,7 @@
 
 include_once '../Plantillas/cabecera.inc.php';
 
-    $pagina = 'filtros';
+    $pagina = 'otros';
     
 
 include_once '../Modelo/mostrar.inc.php';

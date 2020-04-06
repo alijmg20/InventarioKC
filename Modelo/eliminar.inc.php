@@ -4,12 +4,12 @@
 
     if(isset($_GET['id'])){
         $id = (int)$_GET['id'];
-        $categoria = (string)$_GET['categoria'];
-        $eliminar = $conexion->prepare('DELETE FROM '."$categoria".' WHERE id=:id');
+        $pagina = (string)$_GET['categoria'];
+        $eliminar = $conexion->prepare('DELETE FROM '."$pagina".' WHERE id=:id');
         $eliminar->execute(array(
             ':id'=>$id
         ));
-        header("Location: ../Vistas/$categoria.php");
+        header("Location: ../Vistas/$pagina.php");
     }else{
-        header('Location: ../Vistas/index.php');
+        header("Location: ../Vistas/$pagina.php");
     }

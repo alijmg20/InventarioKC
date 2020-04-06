@@ -14,4 +14,19 @@ if(isset($_POST['btn_buscar'])){
     
 }
 
+    //-------------------ACCION CREADA PARA BUSCAR EN LA TABLA DE PROVEEDORES---------------------------//
+
+    
+if(isset($_POST['btn_buscar_proveedor'])){
+    $buscar_texto = $_POST['buscar_Proovedor'];
+    $buscar = $conexion->prepare( 'SELECT * FROM '."$pagina".' WHERE nombre LIKE :campo OR numero LIKE :campo; ' );
+    
+    $buscar -> execute(array(
+        ':campo' => "%".$buscar_texto."%"
+    ));
+    
+    $resultado = $buscar->fetchAll();
+    
+}
+
 ?>

@@ -2,11 +2,11 @@
 
 include_once '../Plantillas/cabecera.inc.php';
 
+$pagina= $_GET['categoria'];
 
 include_once '../Modelo/editar.inc.php';
 
-
-
+if($pagina!== 'proveedores'){
 
 ?>
 <div class="container">
@@ -48,24 +48,11 @@ include_once '../Modelo/editar.inc.php';
         </div>
 
         <br>
-        <div class="row">
-
-            <div class="col-md-6">
-
-                <select class="form-control" name="categoria">
-                    <option value="aceites">aceites</option>
-                    <option value="filtros">filtros</option>
-                    <option value="otros">otros</option>
-                </select>
-
-            </div>
-
-        </div>
 
 
 
         <br>
-        <a href="aceites.php" class="btn btn-danger">cancelar </a>
+        <a href="<?php echo $pagina ?>.php" class="btn btn-danger">cancelar </a>
         <input type="submit" name="boton_guardar" class=" btn btn-success" value="Guardar">
 
     </form>
@@ -77,4 +64,60 @@ include_once '../Modelo/editar.inc.php';
 
 
 <?php
+}else{
+?>
+
+<div class="container">
+    <form method="POST" action="">
+        <div class="row">
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="nombre" placeholder="Nombre" value=<?php if ($resultado) echo $resultado['nombre']; ?>>
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="apellido" placeholder="Apellido" value=<?php if ($resultado) echo $resultado['apellido']; ?>>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="numero" placeholder="Numero" value=<?php if ($resultado) echo $resultado['numero']; ?>>
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" class=" form-control" name="correo" placeholder="Correo" value=<?php if ($resultado) echo $resultado['correo']; ?>>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="ubicacion" placeholder="Ubicación" value=<?php if ($resultado) echo $resultado['ubicacion']; ?>>
+            </div>
+
+        </div>
+
+        <br>
+
+
+
+        <br>
+        <a href="<?php echo $pagina ?>.php" class="btn btn-danger">cancelar </a>
+        <input type="submit" name="boton_guardar_proveedor" class=" btn btn-success" value="Guardar">
+
+    </form>
+
+</div>
+
+
+
+
+
+<?php
+
+}
 include_once '../Plantillas/pie.inc.php';
