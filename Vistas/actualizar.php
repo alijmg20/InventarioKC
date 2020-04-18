@@ -6,7 +6,7 @@ $pagina= $_GET['categoria'];
 
 include_once '../Modelo/editar.inc.php';
 
-if($pagina!== 'proveedores'){
+if($pagina!== 'proveedores' && $pagina !=='ventas'){
 
 ?>
 <div class="container">
@@ -64,7 +64,9 @@ if($pagina!== 'proveedores'){
 
 
 <?php
-}else{
+}else if($pagina==='proveedores'){
+
+    //-----------------------------ACTUALIZAR DE PROOVEDORES-------------------------//
 ?>
 
 <div class="container">
@@ -119,5 +121,41 @@ if($pagina!== 'proveedores'){
 
 <?php
 
+}else if($pagina ==='ventas'){
+
+    //-----------------------------------ACTUALIZAR DE VENTAS------------------------------//
+
+?>
+
+<div class="container">
+    <form method="POST" action="">
+        <div class="row">
+
+            <div class="col-md-6">
+            <input type="text" class=" form-control" name="nombre" placeholder="Nombre del producto" value=<?php if ($resultado) echo $resultado['nombre']; ?>>
+            </div>
+
+            <div class="col-md-6">
+            <input type="text" class=" form-control" name="precio_venta" placeholder="Monto de la venta" value=<?php if ($resultado) echo $resultado['precio_venta']; ?>>
+            </div>
+
+        </div>
+
+        <br>
+        <a href="<?php echo $pagina?>.php" class="btn btn-danger">cancelar </a>
+        <input type="submit" name="boton_guardar_venta" class=" btn btn-success" value="Guardar">
+
+    </form>
+
+</div>
+
+
+
+
+
+
+<?php
+
 }
+
 include_once '../Plantillas/pie.inc.php';

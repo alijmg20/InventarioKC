@@ -65,4 +65,23 @@
 
     }
 
-?>
+    if(isset($_POST['guardar_venta'])){
+        $nombre = $_POST['nombre'];
+        $precio_venta = $_POST['precio_venta'];
+
+        if(!empty($nombre) && !empty($precio_venta)){
+ 
+            $consulta = $conexion -> prepare('INSERT INTO '."$pagina".'(nombre,precio_venta) 
+            VALUES (:nombre,:precio_venta)');
+
+            $consulta -> execute(array(
+                ':nombre' => $nombre,
+                ':precio_venta' => $precio_venta,
+            ));
+            
+        header("Location: ../Vistas/$pagina.php");
+        }else{
+            echo "<script> alert('Los campos estan vacios');  </script>";
+        }
+
+    }

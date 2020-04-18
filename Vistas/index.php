@@ -36,7 +36,7 @@ include_once '../Plantillas/cabecera.inc.php';
 
         <!--Boton de Ventas diarias-->
         <div class="col-md-4">
-            <a href="#" class="btn btn-info fa-4x"> <i class="fas fa-cash-register"></i>Ventas diarias </a>
+            <a href="ventas.php" class="btn btn-info fa-4x"> <i class="fas fa-cash-register"></i>Ventas diarias </a>
         </div>
 
         <!--Boton de Proveedores-->

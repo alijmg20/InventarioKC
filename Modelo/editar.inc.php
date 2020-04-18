@@ -78,3 +78,25 @@ if(isset($_POST['boton_guardar_proveedor'])){
 
 
 }
+
+//-----------------------------BOTON GUARDAR DE VENTAS-----------------------------//
+
+if(isset($_POST['boton_guardar_venta'])){
+    
+    $nombre = $_POST['nombre'];
+    $precio_venta = $_POST['precio_venta'];
+
+    if(!empty($nombre) && !empty($precio_venta)){
+        $consulta = $conexion->prepare('UPDATE '."$pagina".' SET nombre=:nombre,precio_venta=:precio_venta WHERE id=:id');
+        $consulta->execute(array(
+                ':nombre' =>$nombre,
+                ':precio_venta' =>$precio_venta,
+                ':id' =>$id
+        ));
+        header("Location: ../Vistas/$pagina.php");
+    }else{
+        echo "<script> alert('Los campos estan vacios'); </script>";
+    }
+}
+
+

@@ -29,4 +29,20 @@ if(isset($_POST['btn_buscar_proveedor'])){
     
 }
 
+    //-----------------------ACCION DE BUSCAR EN LA TABLA DE VENTAS----------------------//
+
+if(isset($_POST['btn_buscar_venta'])){
+    $buscar_texto = $_POST['buscar_venta'];
+    $buscar = $conexion->prepare( 'SELECT * FROM '."$pagina".' WHERE nombre LIKE :campo; ' );
+    
+    $buscar -> execute(array(
+        ':campo' => "%".$buscar_texto."%"
+    ));
+    
+    $resultado = $buscar->fetchAll();
+    
+}
+
+
+
 ?>

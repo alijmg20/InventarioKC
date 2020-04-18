@@ -9,7 +9,7 @@ $pagina = $_GET['categoria'];
 
 include_once '../Modelo/crear.inc.php';
 
-if($pagina !== 'proveedores'){
+if($pagina !== 'proveedores' && $pagina!== 'ventas'){
 
 
 
@@ -70,7 +70,7 @@ if($pagina !== 'proveedores'){
 
 
 
-<?php }else{   
+<?php }else if($pagina==='proveedores'){   
     
     
     //--------------------FORMULARIO CREADO PARA LOS PROVEEDORES-------------------------------------//
@@ -111,7 +111,7 @@ if($pagina !== 'proveedores'){
         </div>
 
         <br>
-        <div class="row">
+
 
         <br>
         <a href="<?php echo $pagina?>.php" class="btn btn-danger">cancelar </a>
@@ -120,6 +120,38 @@ if($pagina !== 'proveedores'){
     </form>
 
 </div>
+
+
+<?php  }else if($pagina==='ventas'){
+
+    //----------------------------------FORMULARIO DE VENTAS------------------------------//
+
+?>
+
+<div class="container">
+    <form method="POST" action="">
+        <div class="row">
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="nombre" placeholder="Nombre">
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class=" form-control" name="precio_venta" placeholder="Monto de venta">
+            </div>
+
+        </div>
+
+        <br>
+        <a href="<?php echo $pagina?>.php" class="btn btn-danger">cancelar </a>
+        <input type="submit" name="guardar_venta" class=" btn btn-success" value="Guardar">
+
+    </form>
+
+</div>
+
+
+
 
 
 <?php
