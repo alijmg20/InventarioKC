@@ -24,11 +24,9 @@
                 <a href="index.php" class="navbar-brand">
                     KC Suit
                 </a>
-            </div>
-            <ul class="navbar navbar-nav navbar-right">
                 <li class="navbar-brand"><i class="fas fa-dollar-sign"></i> Precio: <?php echo $precio_dolar['valor']?>
                 
                 </li>
-            </ul>
+            </div>
         </nav>
         <br>
