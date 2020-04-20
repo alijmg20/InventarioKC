@@ -33,7 +33,7 @@ if(isset($_POST['btn_buscar_proveedor'])){
 
 if(isset($_POST['btn_buscar_venta'])){
     $buscar_texto = $_POST['buscar_venta'];
-    $buscar = $conexion->prepare( 'SELECT * FROM '."$pagina".' WHERE nombre LIKE :campo; ' );
+    $buscar = $conexion->prepare( 'SELECT * FROM '."$pagina".' WHERE fecha_venta LIKE :campo OR nombre LIKE :campo; ' );
     
     $buscar -> execute(array(
         ':campo' => "%".$buscar_texto."%"
