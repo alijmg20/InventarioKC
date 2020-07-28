@@ -65,6 +65,8 @@
 
     }
 
+    //---------------------------------------------------------------------------------
+
     if(isset($_POST['guardar_venta'])){
         $nombre = $_POST['nombre'];
         $precio_venta = $_POST['precio_venta'];
